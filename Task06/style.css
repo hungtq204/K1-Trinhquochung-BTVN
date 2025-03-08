@@ -1,64 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Poppins:wght@400;500&display=swap");
+.users-list-container {
+  background-color: rgba(230, 234, 248, 1);
+  display: flex;
+  padding: 234px 80px 136px;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: end;
+}
 
-.user-directory {
+.users-list-wrapper {
   border-radius: 16px;
   background-color: #fff;
-  padding: 100px;
-}
-
-@media (max-width: 991px) {
-  .user-directory {
-    padding: 20px;
-  }
-}
-
-.user-directory {
-  background-color: #e6eaf8;
-}
-.container {
-  border-radius: 16px;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1213px;
   padding: 100px;
-  background-color: #fff;
 }
 
-.header {
+.users-header {
+  width: 100%;
   color: #151b32;
 }
 
-.title {
+.users-title {
   font-family: Merriweather, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 32px;
   font-weight: 900;
   margin: 0;
 }
 
-.search-section {
+.users-controls {
   display: flex;
   margin-top: 24px;
   width: 100%;
   align-items: center;
-  gap: 100px;
+  gap: 40px 100px;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-@media (max-width: 991px) {
-  .search-section {
-    gap: 40px;
-  }
 }
 
 .search-bar {
   display: flex;
   align-items: center;
   border-radius: 4px;
-  border: 1px solid #bfc8e5;
+  border: 1px solid var(--bfc-8-e-6, #bfc8e5);
+  min-width: 240px;
   padding: 16px;
   gap: 8px;
-  min-width: 240px;
   width: 327px;
 }
 
@@ -73,74 +59,59 @@
   outline: none;
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 16px;
-  color: #151b32;
   opacity: 0.7;
   width: 100%;
 }
 
 .filter-tabs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0;
   min-width: 240px;
+  align-items: start;
+  overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .filter-tab {
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 16px;
   padding: 16px;
-  background: none;
   border: none;
-  color: #151b32;
+  background: none;
   opacity: 0.8;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .filter-tab.active {
-  background-color: #849fff;
-  color: #fff;
   border-radius: 8px;
-  opacity: 1;
+  background-color: rgba(132, 159, 255, 1);
+  color: #fff;
   font-weight: 500;
+  opacity: 1;
 }
 
-.user-grid {
-  display: flex;
-  flex-wrap: wrap;
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(327px, 1fr));
   gap: 16px;
   margin-top: 70px;
 }
 
-@media (max-width: 991px) {
-  .user-grid {
-    margin-top: 40px;
-  }
-}
-
 .user-card {
-  background-color: #fbfcff;
   border-radius: 16px;
-  padding: 24px;
+  background-color: rgba(251, 252, 255, 1);
   display: flex;
-  gap: 16px;
-  width: 327px;
   min-height: 208px;
-  min-width: 240px;
+  padding: 24px;
+  align-items: start;
+  gap: 16px;
 }
 
-.user-card.highlighted {
+.user-card:nth-child(2) {
   box-shadow: 0px 8px 23px rgba(218, 224, 249, 0.7);
-  border: 1px solid #bfc8e5;
+  border: 1px solid rgba(191, 200, 229, 1);
 }
 
-@media (max-width: 991px) {
-  .user-card {
-    padding: 20px;
-  }
-}
-
-.profile-image {
+.user-avatar {
   width: 97px;
   height: 97px;
   border-radius: 50%;
@@ -150,6 +121,7 @@
 .user-info {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .user-header {
@@ -171,7 +143,7 @@
   margin: 4px 0 0;
 }
 
-.tag-container {
+.user-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
@@ -179,18 +151,35 @@
 }
 
 .tag {
+  border-radius: 10px;
+  border: 1px solid var(--bfc-8-e-6, #bfc8e5);
+  background-color: #fff;
+  padding: 2px 8px;
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 12px;
-  color: #516fd4;
-  background-color: #fff;
-  border: 1px solid #bfc8e5;
-  border-radius: 10px;
-  padding: 2px 8px;
-  white-space: nowrap;
+  color: rgba(81, 111, 212, 1);
+  font-weight: 400;
 }
 
 @media (max-width: 991px) {
-  .tag {
-    white-space: initial;
+  .users-list-container {
+    padding: 100px 20px;
+  }
+
+  .users-list-wrapper {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .users-controls {
+    max-width: 100%;
+  }
+
+  .users-grid {
+    margin-top: 40px;
+  }
+
+  .user-card {
+    padding: 20px;
   }
 }

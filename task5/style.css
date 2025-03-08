@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --color-primary: #0e4c67;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 700;
+}
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+.heaer_logo {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  margin: 32px auto;
+}
+.header_nav {
+  width: 100% max;
+  max-width: 100%;
+  margin-bottom: 62px;
+  padding: 0 32px;
+}
+.header_nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 32px;
+}
+.header_nav ul li a {
+  color: #000;
+  transition: all ease 0.5s;
+}
+.header_nav ul li a:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+#figures {
+  max-width: 100%;
+  padding: 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin: 0 auto;
+}
+#figures figure {
+  max-width: 328px;
+  width: 300px;
+}
+#figures figcaption {
+  width: 100%;
+  background-color: var(--color-primary);
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: -6px;
+}
+#video {
+  width: 100%;
+  padding: 0 16px;
+  margin: 64px auto;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+footer {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-primary);
+  padding: 0 16px;
+  align-items: center;
+}
+.footer_copyright {
+  padding: 26px;
+  color: #fff;
+}
+form input {
+  padding: 16px 26px;
+  border: 2px solid #ffa800;
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
+  margin-right: 24px;
+  border-radius: 5px;
+}
+form input ::placeholder {
+  color: #fff;
+}
+form input.btn-submit {
+  cursor: pointer;
+  background-color: #ffa800;
+
+  border-radius: 5px;
+  border: 2px solid #ffa800;
+  font-size: 16px;
+  color: #fff;
+  transition: all ease 0.5s;
+}
+form input.btn-submit:hover {
+  background-color: transparent;
+}

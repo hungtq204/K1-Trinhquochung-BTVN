@@ -1,185 +1,195 @@
-.users-list-container {
-  background-color: rgba(230, 234, 248, 1);
+.collections-page {
+  background-color: rgba(216, 218, 226, 1);
   display: flex;
-  padding: 234px 80px 136px;
+  padding: 58px 0;
   flex-direction: column;
   overflow: hidden;
-  align-items: end;
+  align-items: stretch;
 }
 
-.users-list-wrapper {
-  border-radius: 16px;
-  background-color: #fff;
+/* Decorative circles */
+.decorative-circle {
+  background-color: rgba(229, 231, 240, 1);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.decorative-circle-top {
+  align-self: end;
+  margin-right: 306px;
+  width: 310px;
+  height: 294px;
+}
+
+.decorative-circle-bottom {
+  margin-top: -251px;
+  margin-left: 221px;
+  width: 433px;
+  height: 410px;
+}
+
+/* Main container */
+.collections-container {
   width: 100%;
-  max-width: 1213px;
-  padding: 100px;
+  padding: 0 18px;
 }
 
-.users-header {
-  width: 100%;
-  color: #151b32;
+.content-wrapper {
+  border-radius: 26px;
+  background-color: rgba(239, 240, 241, 1);
+  box-shadow: 0px 76px 27px rgba(6, 27, 82, 0.1);
+  z-index: 10;
+  padding: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-.users-title {
+/* Header section */
+.collections-header {
+  align-self: start;
+  color: #0e0e38;
+}
+
+.title {
   font-family: Merriweather, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 32px;
-  font-weight: 900;
+  font-weight: 700;
+}
+
+.filter-tags {
+  display: flex;
+  margin-top: 24px;
+  align-items: start;
+  gap: 8px;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.filter-tag {
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* Collections grid */
+.collections-grid {
+  display: flex;
+  margin-top: 56px;
+  align-items: start;
+  gap: 40px 64px;
+  flex-wrap: wrap;
+}
+
+/* Collection card */
+.collection-card {
+  border-radius: 32px;
+  background-color: rgba(255, 255, 255, 1);
+  min-width: 240px;
+  padding: 24px;
+  width: 437px;
+}
+
+.image-gallery {
+  width: 100%;
+  max-width: 389px;
   margin: 0;
 }
 
-.users-controls {
+.gallery-main {
+  aspect-ratio: 1.45;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  border-radius: 24px;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  margin-top: 16px;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.gallery-thumb {
+  aspect-ratio: 1.23;
+  object-fit: contain;
+  object-position: center;
+  width: 119px;
+  border-radius: 24px;
+  flex-shrink: 0;
+}
+
+/* Collection info footer */
+.collection-info {
   display: flex;
   margin-top: 24px;
   width: 100%;
+  max-width: 389px;
   align-items: center;
-  gap: 40px 100px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  border-radius: 4px;
-  border: 1px solid var(--bfc-8-e-6, #bfc8e5);
-  min-width: 240px;
-  padding: 16px;
-  gap: 8px;
-  width: 327px;
-}
-
-.search-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
-
-.search-input {
-  border: none;
-  outline: none;
+  gap: 16px;
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 16px;
-  opacity: 0.7;
-  width: 100%;
-}
-
-.filter-tabs {
-  display: flex;
-  min-width: 240px;
-  align-items: start;
-  overflow: hidden;
-  flex-wrap: wrap;
-}
-
-.filter-tab {
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 16px;
-  padding: 16px;
-  border: none;
-  background: none;
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-.filter-tab.active {
-  border-radius: 8px;
-  background-color: rgba(132, 159, 255, 1);
-  color: #fff;
+  color: #0e0e38;
   font-weight: 500;
-  opacity: 1;
 }
 
-.users-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(327px, 1fr));
-  gap: 16px;
-  margin-top: 70px;
-}
-
-.user-card {
-  border-radius: 16px;
-  background-color: rgba(251, 252, 255, 1);
-  display: flex;
-  min-height: 208px;
-  padding: 24px;
-  align-items: start;
-  gap: 16px;
-}
-
-.user-card:nth-child(2) {
-  box-shadow: 0px 8px 23px rgba(218, 224, 249, 0.7);
-  border: 1px solid rgba(191, 200, 229, 1);
-}
-
-.user-avatar {
-  width: 97px;
-  height: 97px;
-  border-radius: 50%;
-  object-fit: contain;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: column;
+.collection-title {
+  font-size: 24px;
+  margin: 0;
   flex: 1;
 }
 
-.user-header {
-  padding-top: 20px;
-  color: #151b32;
-}
-
-.user-name {
-  font-family: Merriweather, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 900;
-  margin: 0;
-}
-
-.user-location {
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  margin: 4px 0 0;
-}
-
-.user-tags {
+.collection-count {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 4px;
-  margin-top: 16px;
+  font-size: 16px;
 }
 
-.tag {
-  border-radius: 10px;
-  border: 1px solid var(--bfc-8-e-6, #bfc8e5);
-  background-color: #fff;
-  padding: 2px 8px;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 12px;
-  color: rgba(81, 111, 212, 1);
-  font-weight: 400;
+.count-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 31px;
 }
 
+/* Responsive styles */
 @media (max-width: 991px) {
-  .users-list-container {
-    padding: 100px 20px;
+  .decorative-circle-top {
+    margin-right: 10px;
   }
 
-  .users-list-wrapper {
+  .collections-container {
     max-width: 100%;
+  }
+
+  .content-wrapper {
     padding: 20px;
   }
 
-  .users-controls {
+  .collections-header,
+  .filter-tags,
+  .collections-grid {
     max-width: 100%;
   }
 
-  .users-grid {
+  .collections-grid {
     margin-top: 40px;
   }
 
-  .user-card {
+  .collection-card {
+    max-width: 100%;
     padding: 20px;
+  }
+
+  .decorative-circle-bottom {
+    margin-top: -200px;
   }
 }

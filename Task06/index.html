@@ -3,150 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task 06</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="users-list-container">
-      <div class="users-list-wrapper">
-        <header class="users-header">
-          <h1 class="users-title">Users</h1>
-          <div class="users-controls">
-            <div class="search-bar">
-              <img
-                src="/images/search.png"
-                alt="Search icon"
-                class="search-icon"
-              />
-              <input
-                type="text"
-                placeholder="Search users"
-                class="search-input"
-              />
-            </div>
-            <nav class="filter-tabs">
-              <button class="filter-tab">Reputation</button>
-              <button class="filter-tab active">New users</button>
-              <button class="filter-tab">Voters</button>
-              <button class="filter-tab">Editors</button>
-              <button class="filter-tab">Moderators</button>
+    <section class="collections-page">
+      <div class="decorative-circle decorative-circle-top"></div>
+      <main class="collections-container">
+        <div class="content-wrapper">
+          <header class="collections-header">
+            <h1 class="title">Popular Collections</h1>
+            <nav class="filter-tags">
+              <button class="filter-tag">Profile</button>
+              <button class="filter-tag">New York</button>
+              <button class="filter-tag">Relaxing</button>
+              <button class="filter-tag">Person</button>
+              <button class="filter-tag">Fashion</button>
             </nav>
-          </div>
-        </header>
+          </header>
+          <section class="collections-grid">
+            <article class="collection-card">
+              <figure class="image-gallery">
+                <img
+                  src="/images/Rectangle4png.png"
+                  alt="People collection main image"
+                  class="gallery-main"
+                />
+                <div class="gallery-thumbnails">
+                  <img
+                    src="/images/Rectangle 5.png"
+                    alt="People collection thumbnail 1"
+                    class="gallery-thumb"
+                  />
+                  <img
+                    src="/images/Frame 14.png"
+                    alt="People collection thumbnail 2"
+                    class="gallery-thumb"
+                  />
+                  <img
+                    src="/images/Rectangle 6.png"
+                    alt="People collection thumbnail 3"
+                    class="gallery-thumb"
+                  />
+                </div>
+              </figure>
+              <footer class="collection-info">
+                <h2 class="collection-title">People</h2>
+                <div class="collection-count">
+                  <img
+                    src="/images/image.png"
+                    alt="Count icon"
+                    class="count-icon"
+                  />
+                  <span class="count-number">144</span>
+                </div>
+              </footer>
+            </article>
 
-        <section class="users-grid">
-          <article class="user-card">
-            <img
-              src="/images/Ellipse 1.png"
-              alt="Lelah Nichols profile"
-              class="user-avatar"
-            />
-            <div class="user-info">
-              <div class="user-header">
-                <h2 class="user-name">Lelah Nichols</h2>
-                <p class="user-location">Troy, MI</p>
-              </div>
-              <div class="user-tags">
-                <span class="tag">clothes</span>
-                <span class="tag">stem</span>
-              </div>
-            </div>
-          </article>
+            <article class="collection-card">
+              <figure class="image-gallery">
+                <img
+                  src="/images/Rectangle 1.png"
+                  alt="Nature collection main image"
+                  class="gallery-main"
+                />
+                <div class="gallery-thumbnails">
+                  <img
+                    src="/images/Rectangle 2.png"
+                    alt="Nature collection thumbnail 1"
+                    class="gallery-thumb"
+                  />
+                  <img
+                    src="/images/Rectangle 3.png"
+                    alt="Nature collection thumbnail 2"
+                    class="gallery-thumb"
+                  />
+                  <img
+                    src="/images/Rectangle 4.png"
+                    alt="Nature collection thumbnail 3"
+                    class="gallery-thumb"
+                  />
+                </div>
+              </figure>
+              <footer class="collection-info">
+                <h2 class="collection-title">Nature</h2>
+                <div class="collection-count">
+                  <img
+                    src="/images/image.png"
+                    alt="Count icon"
+                    class="count-icon"
+                  />
+                  <span class="count-number">7K</span>
+                </div>
+              </footer>
+            </article>
 
-          <article class="user-card">
-            <img
-              src="/images/Ellipse 2.png"
-              alt="Jesus Weiss profile"
-              class="user-avatar"
-            />
-            <div class="user-info">
-              <div class="user-header">
-                <h2 class="user-name">Jesus Weiss</h2>
-                <p class="user-location">Fort Worth, TX</p>
-              </div>
-              <div class="user-tags">
-                <span class="tag">headset</span>
-                <span class="tag">gadget</span>
-                <span class="tag">speed</span>
-                <span class="tag">winter</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="user-card">
-            <img
-              src="/images/Ellipse 3.png"
-              alt="Annie Rice profile"
-              class="user-avatar"
-            />
-            <div class="user-info">
-              <div class="user-header">
-                <h2 class="user-name">Annie Rice</h2>
-                <p class="user-location">Austin, TX</p>
-              </div>
-              <div class="user-tags">
-                <span class="tag">road</span>
-                <span class="tag">mountain</span>
-                <span class="tag">trip</span>
-                <span class="tag">earth</span>
-                <span class="tag">nature</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="user-card">
-            <img
-              src="/images/Ellipse 4.png"
-              alt="Robert Brower profile"
-              class="user-avatar"
-            />
-            <div class="user-info">
-              <div class="user-header">
-                <h2 class="user-name">Robert Brower</h2>
-                <p class="user-location">Cincinnati, OH</p>
-              </div>
-              <div class="user-tags">
-                <span class="tag">maintenance</span>
-                <span class="tag">gears</span>
-                <span class="tag">frames</span>
-                <span class="tag">repair</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="user-card">
-            <img src="/images/Ellipse 5.png" class="user-avatar" />
-            <div class="user-info">
-              <div class="user-header">
-                <h2 class="user-name">Amy Campbell</h2>
-                <p class="user-location">Warrior, AL</p>
-              </div>
-              <div class="user-tags">
-                <span class="tag">music</span>
-                <span class="tag">disks</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="user-card">
-            <img
-              src="/images/Ellipse 6.png"
-              alt="Anthony S. Morin profile"
-              class="user-avatar"
-            />
-            <div class="user-info">
-              <div class="user-header">
-                <h2 class="user-name">Anthony S. Morin</h2>
-                <p class="user-location">Lyndhurst, NJ</p>
-              </div>
-              <div class="user-tags">
-                <span class="tag">vintage</span>
-                <span class="tag">electric</span>
-              </div>
-            </div>
-          </article>
-        </section>
-      </div>
-    </main>
+            <article class="collection-card">
+              <figure class="image-gallery">
+                <img
+                  src="/images/Rectangle 7.png"
+                  alt="History collection main image"
+                  class="gallery-main"
+                />
+                <div class="gallery-thumbnails">
+                  <img
+                    src="/images/Rectangle 8.png"
+                    alt="History collection thumbnail 1"
+                    class="gallery-thumb"
+                  />
+                  <img
+                    src="/images/Rectangle 98.png"
+                    alt="History collection thumbnail 2"
+                    class="gallery-thumb"
+                  />
+                  <img
+                    src="/images/Rectangle 10.png"
+                    alt="History collection thumbnail 3"
+                    class="gallery-thumb"
+                  />
+                </div>
+              </figure>
+              <footer class="collection-info">
+                <h2 class="collection-title">History</h2>
+                <div class="collection-count">
+                  <img
+                    src="/images/image.png"
+                    alt="Count icon"
+                    class="count-icon"
+                  />
+                  <span class="count-number">431</span>
+                </div>
+              </footer>
+            </article>
+          </section>
+        </div>
+        <div class="decorative-circle decorative-circle-bottom"></div>
+      </main>
+    </section>
   </body>
 </html>

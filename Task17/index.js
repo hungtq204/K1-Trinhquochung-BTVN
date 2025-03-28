@@ -27,8 +27,8 @@ function taxSalary(salary) {
     thue = thue + (salary - 11000000) * 0;
     salary = 0;
   }
-  document.writeln("<br>");
-  document.writeln(thue.toLocaleString("vi-VN"));
+
+  console.log(thue.toLocaleString("vi-VN"));
 }
 
 // Output:

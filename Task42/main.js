@@ -50,7 +50,7 @@ function add() {
     science.value > 10 ||
     science.value < 0
   ) {
-    errortext.innerText = 'Điểm không hợp lệ !';
+    errortext.innerText = 'Nhập điểm không hợp lệ !';
     errortext.classList.remove('d-none');
     return;
   }

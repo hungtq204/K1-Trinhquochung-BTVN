@@ -28,7 +28,7 @@ function generateId(length) {
     numberRD = Math.floor(Math.random() * listCharaters.length);
     newId += listCharaters[numberRD];
   }
-  return `SV-${newId}`;
+  return newId;
 }
 
 function add() {
@@ -85,7 +85,7 @@ function add() {
 }
 
 function deleteST(id) {
-  const i = confirm('Bạn Chắc Chưa !');
+  const i = confirm('Bạn Chắc chắn xóa Chưa !');
   if (i) {
     dataStudents = dataStudents.filter((hs) => hs.id != id);
     successText.innerText = 'Đã xóa thành công !';

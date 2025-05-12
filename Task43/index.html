@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 p-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-wrap items-center gap-4 mb-6">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Tìm sản phẩm..."
+          class="border px-3 py-2 rounded w-60"
+        />
+        <button
+          onclick="searchProduct()"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Tìm
+        </button>
+        <button
+          onclick="sortProducts('asc')"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+        >
+          Giá ↑
+        </button>
+        <button
+          onclick="sortProducts('desc')"
+          class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+        >
+          Giá ↓
+        </button>
+      </div>
+
+      <p id="productCount" class="mb-4 text-sm text-gray-600"></p>
+
+      <div
+        id="productList"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+      ></div>
+
+      <div class="flex items-center justify-center gap-4 mt-6">
+        <button
+          onclick="prevPage()"
+          class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400"
+        >
+          « Trước
+        </button>
+        <span id="pageInfo" class="text-sm"></span>
+        <button
+          onclick="nextPage()"
+          class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400"
+        >
+          Sau »
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="detailModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white p-6 rounded w-[90%] max-w-md">
+        <h2 id="detailTitle" class="text-xl font-semibold mb-2"></h2>
+        <img id="detailImage" class="w-full h-48 object-cover mb-2 rounded" />
+        <p id="detailDescription" class="mb-2 text-sm text-gray-600"></p>
+        <p><strong>Giá:</strong> $<span id="detailPrice"></span></p>
+        <div class="text-right mt-4">
+          <button
+            onclick="closeModal()"
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Đóng
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

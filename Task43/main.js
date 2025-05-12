@@ -32,9 +32,7 @@ function renderProducts() {
     )
     .join('');
 
-  document.getElementById(
-    'productCount'
-  ).innerText = `Hiển thị ${paginated.length} / ${allProducts.length} sản phẩm`;
+  document.getElementById('productCount').innerText = ``;
   document.getElementById(
     'pageInfo'
   ).innerText = `Trang ${currentPage} / ${Math.ceil(

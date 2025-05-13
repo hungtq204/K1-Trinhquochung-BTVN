@@ -32,17 +32,35 @@ function renderProducts() {
     )
     .join('');
 
-  document.getElementById('productCount').innerText = ``;
   document.getElementById(
-    'pageInfo'
-  ).innerText = `Trang ${currentPage} / ${Math.ceil(
-    allProducts.length / itemsPerPage
-  )}`;
+    'productCount'
+  ).innerText = `Hiển thị ${paginated.length} / ${allProducts.length} sản phẩm`;
+  renderPagination();
+}
+
+function renderPagination() {
+  const pagination = document.getElementById('pagination');
+  pagination.innerHTML = '';
+  const totalPages = Math.ceil(allProducts.length / itemsPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement('button');
+    btn.textContent = i;
+    btn.className =
+      'px-3 py-1 rounded border text-sm hover:bg-blue-100' +
+      (currentPage === i ? ' bg-blue-500 text-white font-semibold' : '');
+    btn.onclick = () => {
+      currentPage = i;
+      renderProducts();
+    };
+    pagination.appendChild(btn);
+  }
 }
 
 function searchProduct() {
   const query = document.getElementById('searchInput').value.trim();
   if (!query) return fetchProducts();
+
   fetch(`https://dummyjson.com/products/search?q=${query}`)
     .then((res) => res.json())
     .then((data) => {

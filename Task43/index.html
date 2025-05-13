@@ -24,13 +24,13 @@
           onclick="sortProducts('asc')"
           class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
         >
-          Giá ↑
+          Giá thấp đến cao
         </button>
         <button
           onclick="sortProducts('desc')"
           class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
         >
-          Giá ↓
+          Giá cao đến thấp
         </button>
       </div>
 
@@ -48,7 +48,9 @@
         >
           « Trước
         </button>
-        <span id="pageInfo" class="text-sm"></span>
+
+        <div id="pagination" class="flex items-center gap-2"></div>
+
         <button
           onclick="nextPage()"
           class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400"

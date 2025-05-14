@@ -1,6 +1,7 @@
 let allProducts = [];
 let currentPage = 1;
 const itemsPerPage = 10;
+let searchTimeout;
 
 async function fetchProducts(url = 'https://dummyjson.com/products') {
   const res = await fetch(url);
@@ -19,20 +20,19 @@ function renderProducts() {
   container.innerHTML = paginated
     .map(
       (p) => `
-    <div class="bg-white border rounded shadow-sm p-3 flex flex-col">
-      <img src="${p.thumbnail}" class="h-36 object-cover rounded mb-2">
-      <h3 class="font-semibold text-sm">${p.title}</h3>
-      <p class="text-xs text-gray-500 mb-1">${p.description.slice(0, 50)}...</p>
-      <p class="text-sm font-medium mb-2">Giá: $${p.price}</p>
-      <button onclick="showDetail(${
-        p.id
-      })" class="mt-auto bg-blue-500 text-white text-sm px-3 py-1 rounded hover:bg-blue-600">Xem chi tiết</button>
-    </div>
-  `
+  <div class="bg-white border rounded shadow-sm p-3 flex flex-col">
+    <img src="${p.thumbnail}" class="h-36 object-cover rounded mb-2">
+    <h3 class="font-semibold text-sm">${p.title}</h3>
+    <p class="text-xs text-gray-500 mb-1">${p.description.slice(0, 50)}...</p>
+    <p class="text-sm font-medium mb-2">Giá: $${p.price}</p>
+    <button onclick="showDetail(${
+      p.id
+    })" class="mt-auto bg-blue-500 text-white text-sm px-3 py-1 rounded hover:bg-blue-600">Xem chi tiết</button>
+  </div>
+`
     )
     .join('');
 
-  document.getElementById('productCount').innerText = ``;
   renderPagination();
 }
 
@@ -55,17 +55,20 @@ function renderPagination() {
   }
 }
 
-function searchProduct() {
-  const query = document.getElementById('searchInput').value.trim();
-  if (!query) return fetchProducts();
+function handleSearchInput() {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    const query = document.getElementById('searchInput').value.trim();
+    if (!query) return fetchProducts();
 
-  fetch(`https://dummyjson.com/products/search?q=${query}`)
-    .then((res) => res.json())
-    .then((data) => {
-      allProducts = data.products;
-      currentPage = 1;
-      renderProducts();
-    });
+    fetch(`https://dummyjson.com/products/search?q=${query}`)
+      .then((res) => res.json())
+      .then((data) => {
+        allProducts = data.products;
+        currentPage = 1;
+        renderProducts();
+      });
+  }, 500);
 }
 
 function sortProducts(order) {
@@ -76,14 +79,19 @@ function sortProducts(order) {
   renderProducts();
 }
 
-function showDetail(id) {
-  const product = allProducts.find((p) => p.id === id);
-  if (!product) return;
-  document.getElementById('detailTitle').innerText = product.title;
-  document.getElementById('detailImage').src = product.thumbnail;
-  document.getElementById('detailDescription').innerText = product.description;
-  document.getElementById('detailPrice').innerText = product.price;
-  document.getElementById('detailModal').classList.remove('hidden');
+async function showDetail(id) {
+  try {
+    const res = await fetch(`https://dummyjson.com/products/${id}`);
+    const product = await res.json();
+    document.getElementById('detailTitle').innerText = product.title;
+    document.getElementById('detailImage').src = product.thumbnail;
+    document.getElementById('detailDescription').innerText =
+      product.description;
+    document.getElementById('detailPrice').innerText = product.price;
+    document.getElementById('detailModal').classList.remove('hidden');
+  } catch (error) {
+    console.error('Lỗi khi lấy chi tiết sản phẩm:', error);
+  }
 }
 
 function closeModal() {
